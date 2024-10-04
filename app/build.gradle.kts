@@ -1,7 +1,12 @@
 plugins {
     application
     distribution
+    checkstyle
     id("java")
+    id("checkstyle")
+    id("io.freefair.lombok") version "8.6"
+    id("com.github.ben-manes.versions") version "0.50.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "hexlet.code"
@@ -25,5 +30,5 @@ tasks.test {
 }
 
 tasks.getByName("run", JavaExec::class) {
-    standartInput = System.`in`
+    standardInput = System.`in`
 }
