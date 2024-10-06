@@ -9,3 +9,6 @@ https://asciinema.org/a/rFYjy1SrjhPYpLieTuhigOOT5
 
 # asciinema link for Calc game:
 https://asciinema.org/a/mf0Ex1AZfM8aS7UkQPyG1006g
+
+# asciinema link for GDC game:
+https://asciinema.org/a/4xrHNNwpMbbL0hMb1Aom7GYPp
