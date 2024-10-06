@@ -4,5 +4,8 @@
 # java-package
 [![Maintainability](https://api.codeclimate.com/v1/badges/0eb0fea399b368bdfee7/maintainability)](https://codeclimate.com/github/HBirdman/java-project-61/maintainability)
 
-# asciinema link
+# asciinema link for Even game:
 https://asciinema.org/a/rFYjy1SrjhPYpLieTuhigOOT5
+
+# asciinema link for Calc game:
+https://asciinema.org/a/mf0Ex1AZfM8aS7UkQPyG1006g
