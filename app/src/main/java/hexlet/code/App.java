@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
-
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -16,6 +15,7 @@ public class App {
                 3 - Calc
                 4 - GDC
                 5 - Progression
+                6 - Prime
                 0 - Exit""");
         String choice = sc.nextLine();
         System.out.println("Your choice: " + choice + "\n");
@@ -33,6 +33,9 @@ public class App {
         } else if (Objects.equals(choice, "5")) {
             Cli.greetings();
             Progression.gameProgression();
+        } else if (Objects.equals(choice, "6")) {
+            Cli.greetings();
+            Prime.primeGame();
         }
     }
 }
