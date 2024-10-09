@@ -6,7 +6,7 @@ public class Engine {
     public static void logic(String task, String[] question, String[] correctAnswer) {
         var count = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("May I have your name?");
+        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
         String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);

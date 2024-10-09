@@ -22,19 +22,14 @@ public class App {
         if (Objects.equals(choice, "1")) {
             Cli.greetings();
         } else if (Objects.equals(choice, "2")) {
-            Cli.greetings();
             Even.evenGame();
         } else if (Objects.equals(choice, "3")) {
-            Cli.greetings();
             Calc.calcGame();
         } else if (Objects.equals(choice, "4")) {
-            Cli.greetings();
             GDC.gdcGame();
         } else if (Objects.equals(choice, "5")) {
-            Cli.greetings();
             Progression.gameProgression();
         } else if (Objects.equals(choice, "6")) {
-            Cli.greetings();
             Prime.primeGame();
         }
     }
