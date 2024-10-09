@@ -31,6 +31,8 @@ public class Progression {
         String[] progression = stringProgression.substring(1, stringProgression.length()-1).split(", ");
         progression[missedNumber] = "..";
         stringProgression = Arrays.toString(progression);
+        stringProgression = stringProgression.replaceAll(",", "");
+        stringProgression = stringProgression.substring(1, stringProgression.length() - 1);
         return new String[]{String.valueOf(answer), stringProgression};
 
     }
