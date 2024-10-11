@@ -19,9 +19,9 @@ public class Progression {
     }
 
     public static String[] generateProgression() {
-        var progressionStepRange = 20;
-        var progressionLength = 10;
-        var firstNumberRange = 20;
+        final int progressionStepRange = 20;
+        final int progressionLength = 10;
+        final int firstNumberRange = 20;
         var progressionStep = generateNumber(progressionStepRange);
         int[] progressionNumbers = new int[progressionLength];
         progressionNumbers[0] = generateNumber(firstNumberRange);

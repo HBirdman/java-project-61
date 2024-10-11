@@ -17,7 +17,7 @@ public class Prime {
     }
 
     public static int generateNumber() {
-        var numberRange = 20;
+        final int numberRange = 20;
         return (int) (Math.random() * numberRange);
     }
 

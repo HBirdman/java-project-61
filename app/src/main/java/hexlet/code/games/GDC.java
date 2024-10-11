@@ -14,7 +14,7 @@ public class GDC {
     }
 
     public static int generateNumber() {
-        var numbersRange = 100;
+        final int numbersRange = 100;
         return (int) (Math.random() * numbersRange);
     }
 

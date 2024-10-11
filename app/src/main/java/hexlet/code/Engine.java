@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static void logic(String task, String[] question, String[] correctAnswer) {
         var count = 0;
-        var totalRounds = 3;
+        final int totalRounds = 3;
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
         String name = sc.nextLine();
@@ -19,8 +19,8 @@ public class Engine {
                 System.out.println("Correct!");
                 count++;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. " +
-                        "Correct answer was '" + correctAnswer[i] + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. "
+                        + "Correct answer was '" + correctAnswer[i] + "'.");
                 System.out.println("Let's try again, " + name + "!");
                 break;
             }
