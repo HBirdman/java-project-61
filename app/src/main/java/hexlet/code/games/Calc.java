@@ -18,7 +18,8 @@ public class Calc {
     }
 
     public static int generateNumber() {
-        return (int) (Math.random() * 20);
+        var calcRange = 20;
+        return (int) (Math.random() * calcRange);
     }
 
     public static String generateOperator() {

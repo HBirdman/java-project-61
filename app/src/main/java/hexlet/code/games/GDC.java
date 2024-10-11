@@ -14,7 +14,8 @@ public class GDC {
     }
 
     public static int generateNumber() {
-        return (int) (Math.random() * 100);
+        var numbersRange = 100;
+        return (int) (Math.random() * numbersRange);
     }
 
     public static String[] findGDC() {

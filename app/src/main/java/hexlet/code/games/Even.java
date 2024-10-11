@@ -17,7 +17,8 @@ public class Even {
     }
 
     public static int generateNumber() {
-        return (int) (Math.random() * 100);
+        var evenRange = 100;
+        return (int) (Math.random() * evenRange);
     }
 
     public static String getCorrectAnswer(int randomNumber) {

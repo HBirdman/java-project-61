@@ -19,16 +19,19 @@ public class Progression {
     }
 
     public static String[] generateProgression() {
-        var progressionStep = generateNumber(20);
-        int[] progressionNumbers = new int[10];
-        progressionNumbers[0] = generateNumber(20);
-        for (var i = 0; i < 9; i++) {
-            progressionNumbers[i + 1] = progressionNumbers[i] + progressionStep;
+        var progressionStepRange = 20;
+        var progressionLength = 10;
+        var firstNumberRange = 20;
+        var progressionStep = generateNumber(progressionStepRange);
+        int[] progressionNumbers = new int[progressionLength];
+        progressionNumbers[0] = generateNumber(firstNumberRange);
+        for (var i = 1; i < progressionLength; i++) {
+            progressionNumbers[i] = progressionNumbers[i - 1] + progressionStep;
         }
-        var missedNumber = generateNumber(9);
+        var missedNumber = generateNumber(progressionLength - 1);
         var answer = progressionNumbers[missedNumber];
         var stringProgression = Arrays.toString(progressionNumbers);
-        String[] progression = stringProgression.substring(1, stringProgression.length()-1).split(", ");
+        String[] progression = stringProgression.substring(1, stringProgression.length() - 1).split(", ");
         progression[missedNumber] = "..";
         stringProgression = Arrays.toString(progression);
         stringProgression = stringProgression.replaceAll(",", "");

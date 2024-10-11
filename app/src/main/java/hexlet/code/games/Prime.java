@@ -17,14 +17,15 @@ public class Prime {
     }
 
     public static int generateNumber() {
-        return (int) (Math.random() * 20);
+        var numberRange = 20;
+        return (int) (Math.random() * numberRange);
     }
 
     public static String isSimple(Integer number) {
-        if(number < 2) {
+        if (number < 2) {
             return "no";
         }
-        for(int i = 2; i <= Math.sqrt(number); i++) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 return "no";
             }
