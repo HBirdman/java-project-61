@@ -30,6 +30,7 @@ public class Engine {
             count++;
             return "Correct!";
         } else {
+            result = 1;
             return ("'" + answer + "' is wrong answer ;(. "
                     + "Correct answer was '" + correctAnswer + "'.\n"
                     + "Let's try again, " + Engine.name + "!");
