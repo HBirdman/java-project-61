@@ -1,27 +1,27 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class GDC {
-    public static void gdcGame() {
-        var task = "Find the greatest common divisor of given numbers.";
-        var numbersAndAnswer1 = findGDC();
-        var numbersAndAnswer2 = findGDC();
-        var numbersAndAnswer3 = findGDC();
-        var numbers = new String[]{numbersAndAnswer1[0], numbersAndAnswer2[0], numbersAndAnswer3[0]};
-        var answers = new String[]{numbersAndAnswer1[1], numbersAndAnswer2[1], numbersAndAnswer3[1]};
-        Engine.logic(task, numbers, answers);
-    }
-
-    public static int generateNumber() {
-        final int numbersRange = 100;
-        return (int) (Math.random() * numbersRange);
+    public static void game(int numberOfRounds) {
+        String task = "Find the greatest common divisor of given numbers.";
+        String[][] numbersAndAnswers = new String[2][numberOfRounds];
+        for (var i = 0; i < numberOfRounds; i++) {
+            int column = 0;
+            String[] numberAndAnswer = findGDC();
+            numbersAndAnswers[column][i] = numberAndAnswer[column];
+            column++;
+            numbersAndAnswers[column][i] = numberAndAnswer[column];
+        }
+        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
     }
 
     public static String[] findGDC() {
-        var a = generateNumber();
-        var b = generateNumber();
-        var expression = a + " " + b;
+        int numberRange = 100;
+        int a = Util.randomNumber(numberRange);
+        int b = Util.randomNumber(numberRange);
+        String expression = a + " " + b;
         while (a != 0 && b != 0) {
             if (a > b) {
                 a = a % b;
@@ -29,7 +29,7 @@ public class GDC {
                 b = b % a;
             }
         }
-        var answer = a + b;
+        int answer = a + b;
         return new String[]{expression, String.valueOf(answer)};
     }
 }

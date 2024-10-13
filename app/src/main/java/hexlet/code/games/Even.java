@@ -1,28 +1,25 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Even {
-    public static void evenGame() {
-        var task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        var number1 = generateNumber();
-        var answer1 = getCorrectAnswer(number1);
-        var number2 = generateNumber();
-        var answer2 = getCorrectAnswer(number2);
-        var number3 = generateNumber();
-        var answer3 = getCorrectAnswer(number3);
-        String[] numbers = {Integer.toString(number1), Integer.toString(number2), Integer.toString(number3)};
-        String[] answers = {answer1, answer2, answer3};
-        Engine.logic(task, numbers, answers);
-    }
-
-    public static int generateNumber() {
+    public static void game(int numberOfRounds) {
+        String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         final int evenRange = 100;
-        return (int) (Math.random() * evenRange);
+        String[][] numbersAndAnswers = new String[2][numberOfRounds];
+        for (var i = 0; i < numberOfRounds; i++) {
+            int column = 0;
+            int number = Util.randomNumber(evenRange);
+            numbersAndAnswers[column][i] = String.valueOf(number);
+            column++;
+            numbersAndAnswers[column][i] = getCorrectAnswer(number);
+        }
+        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
     }
 
     public static String getCorrectAnswer(int randomNumber) {
-        var correctAnswer = "";
+        String correctAnswer;
         if (randomNumber % 2 == 0) {
             correctAnswer = "yes";
         } else {

@@ -1,25 +1,23 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Util;
 
 public class Prime {
-    public static void primeGame() {
-        var task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        var number1 = generateNumber();
-        var answer1 = isSimple(number1);
-        var number2 = generateNumber();
-        var answer2 = isSimple(number2);
-        var number3 = generateNumber();
-        var answer3 = isSimple(number3);
-        String[] numbers = {String.valueOf(number1), String.valueOf(number2), String.valueOf(number3)};
-        String[] answers = {answer1, answer2, answer3};
-        Engine.logic(task, numbers, answers);
+    public static void game(int numberOfRounds) {
+        String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        final int numberRange = 20;
+        String[][] numbersAndAnswers = new String[2][numberOfRounds];
+        for (var i = 0; i < numberOfRounds; i++) {
+            int column = 0;
+            int number = Util.randomNumber(numberRange);
+            numbersAndAnswers[column][i] = String.valueOf(number);
+            column++;
+            numbersAndAnswers[column][i] = isSimple(number);
+        }
+        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
     }
 
-    public static int generateNumber() {
-        final int numberRange = 20;
-        return (int) (Math.random() * numberRange);
-    }
 
     public static String isSimple(Integer number) {
         if (number < 2) {
@@ -32,5 +30,4 @@ public class Prime {
         }
         return "yes";
     }
-
 }
