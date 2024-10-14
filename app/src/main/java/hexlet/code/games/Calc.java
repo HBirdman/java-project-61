@@ -28,7 +28,7 @@ public class Calc {
 
     public static String[] construct(String operator) {
         String[] result = new String[2];
-        int calcRange = 20;
+        final int calcRange = 20;
         if (operator.equalsIgnoreCase("+")) {
             int operand1 = Util.randomNumber(calcRange);
             int operand2 = Util.randomNumber(calcRange);

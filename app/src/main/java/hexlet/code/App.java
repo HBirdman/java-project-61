@@ -41,6 +41,8 @@ public class App {
             case "6":
                 Prime.game(numberOfRounds);
                 break;
+            default:
+                break;
         }
     }
 }

@@ -18,7 +18,7 @@ public class GDC {
     }
 
     public static String[] findGDC() {
-        int numberRange = 100;
+        final int numberRange = 100;
         int a = Util.randomNumber(numberRange);
         int b = Util.randomNumber(numberRange);
         String expression = a + " " + b;
