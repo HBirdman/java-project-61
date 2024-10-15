@@ -12,10 +12,10 @@ public class GDC {
             int column = 0;
             int a = Util.randomNumber(numberRange);
             int b = Util.randomNumber(numberRange);
-            int Answer = findGDC2(a, b);
+            int answer = findGDC2(a, b);
             numbersAndAnswers[column][i] = a + " " + b;
             column++;
-            numbersAndAnswers[column][i] = String.valueOf(Answer);
+            numbersAndAnswers[column][i] = String.valueOf(answer);
         }
         Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
     }
