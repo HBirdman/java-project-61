@@ -7,29 +7,24 @@ public class GDC {
     public static void game(int numberOfRounds) {
         String task = "Find the greatest common divisor of given numbers.";
         String[][] numbersAndAnswers = new String[2][numberOfRounds];
+        final int numberRange = 100;
         for (var i = 0; i < numberOfRounds; i++) {
             int column = 0;
-            String[] numberAndAnswer = findGDC();
-            numbersAndAnswers[column][i] = numberAndAnswer[column];
+            int a = Util.randomNumber(numberRange);
+            int b = Util.randomNumber(numberRange);
+            int Answer = findGDC2(a, b);
+            numbersAndAnswers[column][i] = a + " " + b;
             column++;
-            numbersAndAnswers[column][i] = numberAndAnswer[column];
+            numbersAndAnswers[column][i] = String.valueOf(Answer);
         }
         Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
     }
 
-    public static String[] findGDC() {
-        final int numberRange = 100;
-        int a = Util.randomNumber(numberRange);
-        int b = Util.randomNumber(numberRange);
-        String expression = a + " " + b;
-        while (a != 0 && b != 0) {
-            if (a > b) {
-                a = a % b;
-            } else {
-                b = b % a;
-            }
+
+    public static int findGDC2(int a, int b) {
+        if (b == 0) {
+            return a;
         }
-        int answer = a + b;
-        return new String[]{expression, String.valueOf(answer)};
+        return findGDC2(b, a % b);
     }
 }

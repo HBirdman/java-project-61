@@ -3,21 +3,20 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static int count = 0;
-    public static int result = 0;
-    public static String name;
-
+    private static int count = 0;
+    private static int result = 0;
     public static void logic(String task, String[] question, String[] correctAnswer, int numberOfRounds) {
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        name = sc.nextLine();
+        String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         for (var i = 0; i < numberOfRounds; i++) {
             System.out.println("Question: " + question[i]);
             String answer = sc.nextLine();
             System.out.println("Your answer: " + answer);
-            System.out.println(answerChecker(correctAnswer[i], answer));
+            System.out.println(answerChecker(correctAnswer[i], answer, name));
             if (result == 1) {
                 break;
             }
@@ -26,7 +25,7 @@ public class Engine {
         }
     }
 
-    public static String answerChecker(String correctAnswer, String answer) {
+    public static String answerChecker(String correctAnswer, String answer, String name) {
         if (correctAnswer.equalsIgnoreCase(answer)) {
             count++;
             return "Correct!";
