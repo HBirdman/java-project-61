@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Util;
-import java.util.Arrays;
 
 public class Progression {
     public static void game(int numberOfRounds) {
@@ -30,12 +29,15 @@ public class Progression {
         }
         int missedNumber = Util.randomNumber(progressionLength - 1);
         int answer = progressionNumbers[missedNumber];
-        String stringProgression = Arrays.toString(progressionNumbers);
-        String[] progression = stringProgression.substring(1, stringProgression.length() - 1).split(", ");
-        progression[missedNumber] = "..";
-        stringProgression = Arrays.toString(progression);
-        stringProgression = stringProgression.replaceAll(",", "");
-        stringProgression = stringProgression.substring(1, stringProgression.length() - 1);
-        return new String[]{stringProgression, String.valueOf(answer)};
+        var stringProgression = new StringBuilder();
+        for (int number : progressionNumbers) {
+            if (number == answer) {
+                stringProgression.append(".. ");
+                continue;
+            }
+            stringProgression.append(number);
+            stringProgression.append(" ");
+        }
+        return new String[]{stringProgression.toString(), String.valueOf(answer)};
     }
 }

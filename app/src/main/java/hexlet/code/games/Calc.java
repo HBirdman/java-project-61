@@ -27,27 +27,25 @@ public class Calc {
     }
 
     public static String[] construct(String operator) {
-        String[] result = new String[2];
         final int calcRange = 20;
-        if (operator.equalsIgnoreCase("+")) {
-            int operand1 = Util.randomNumber(calcRange);
-            int operand2 = Util.randomNumber(calcRange);
-            String expression = operand1 + " + " + operand2;
-            int answer = operand1 + operand2;
-            result = new String[]{expression, Integer.toString(answer)};
-        } else if (operator.equalsIgnoreCase("-")) {
-            int operand1 = Util.randomNumber(calcRange);
-            int operand2 = Util.randomNumber(calcRange);
-            String expression = operand1 + " - " + operand2;
-            int answer = operand1 - operand2;
-            result = new String[]{expression, Integer.toString(answer)};
-        } else if (operator.equalsIgnoreCase("*")) {
-            int operand1 = Util.randomNumber(calcRange);
-            int operand2 = Util.randomNumber(calcRange);
-            String expression = operand1 + " * " + operand2;
-            int answer = operand1 * operand2;
-            result = new String[]{expression, Integer.toString(answer)};
-        }
-        return result;
+        int operand1 = Util.randomNumber(calcRange);
+        int operand2 = Util.randomNumber(calcRange);
+        int answer;
+        String expression = operand1 + " " + operator + " " + operand2;
+        return switch (operator) {
+            case "+" -> {
+                answer = operand1 + operand2;
+                yield new String[]{expression, Integer.toString(answer)};
+            }
+            case "-" -> {
+                answer = operand1 - operand2;
+                yield new String[]{expression, Integer.toString(answer)};
+            }
+            case "*" -> {
+                answer = operand1 * operand2;
+                yield new String[]{expression, Integer.toString(answer)};
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + operator);
+        };
     }
 }

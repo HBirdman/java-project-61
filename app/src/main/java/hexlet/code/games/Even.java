@@ -19,12 +19,10 @@ public class Even {
     }
 
     public static String getCorrectAnswer(int randomNumber) {
-        String correctAnswer;
         if (randomNumber % 2 == 0) {
-            correctAnswer = "yes";
+            return "yes";
         } else {
-            correctAnswer = "no";
+            return "no";
         }
-        return correctAnswer;
     }
 }
