@@ -3,37 +3,30 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static int count = 0;
-    private static int result = 0;
     public static void logic(String task, String[] question, String[] correctAnswer, int numberOfRounds) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
+        System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         for (var i = 0; i < numberOfRounds; i++) {
-            System.out.println("Question: " + question[i]);
+            System.out.print("Question: " + question[i] + "\nYour answer: ");
             String answer = sc.nextLine();
-            System.out.println("Your answer: " + answer);
-            System.out.println(answerChecker(correctAnswer[i], answer, name));
-            if (result == 1) {
-                break;
-            }
-        } if (count == numberOfRounds) {
-            System.out.println("Congratulations, " + name + "!");
+            answerChecker(correctAnswer[i], answer, name);
         }
+        System.out.println("Congratulations, " + name + "!");
     }
 
-    public static String answerChecker(String correctAnswer, String answer, String name) {
+    public static void answerChecker(String correctAnswer, String answer, String name) {
         if (correctAnswer.equalsIgnoreCase(answer)) {
-            count++;
-            return "Correct!";
+            System.out.println("Correct!");
         } else {
-            result++;
-            return ("'" + answer + "' is wrong answer ;(. "
+            System.out.println("'" + answer + "' is wrong answer ;(. "
                     + "Correct answer was '" + correctAnswer + "'.\n"
                     + "Let's try again, " + name + "!");
+            System.exit(0);
         }
+
     }
 }
