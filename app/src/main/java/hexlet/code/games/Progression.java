@@ -14,7 +14,7 @@ public class Progression {
             column++;
             progressionsAndAnswers[column][i] = progressionAndAnswer[column];
         }
-        Engine.logic(task, progressionsAndAnswers[0], progressionsAndAnswers[1]);
+        Engine.logic(task, progressionsAndAnswers);
     }
 
     public static String[] generateProgression() {

@@ -17,7 +17,7 @@ public class Calc {
             column++;
             expressionsAndAnswers[column][i] = expressionAndAnswer[column];
         }
-        Engine.logic(task, expressionsAndAnswers[0], expressionsAndAnswers[1]);
+        Engine.logic(task, expressionsAndAnswers);
     }
 
     public static String generateOperator() {

@@ -9,16 +9,16 @@ public class Engine {
         return NUMBER_OF_ROUNDS;
     }
 
-    public static void logic(String task, String[] question, String[] correctAnswer) {
+    public static void logic(String task, String[][] questionAndAnswer) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            System.out.print("Question: " + question[i] + "\nYour answer: ");
+            System.out.print("Question: " + questionAndAnswer[0][i] + "\nYour answer: ");
             String answer = sc.nextLine();
-            answerChecker(correctAnswer[i], answer, name);
+            answerChecker(questionAndAnswer[1][i], answer, name);
         }
         System.out.println("Congratulations, " + name + "!");
     }

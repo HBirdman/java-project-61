@@ -15,7 +15,7 @@ public class Even {
             column++;
             numbersAndAnswers[column][i] = getCorrectAnswer(number);
         }
-        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1]);
+        Engine.logic(task, numbersAndAnswers);
     }
 
     public static String getCorrectAnswer(int randomNumber) {

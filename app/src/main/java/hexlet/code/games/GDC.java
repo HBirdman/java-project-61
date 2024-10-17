@@ -17,7 +17,7 @@ public class GDC {
             column++;
             numbersAndAnswers[column][i] = String.valueOf(answer);
         }
-        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1]);
+        Engine.logic(task, numbersAndAnswers);
     }
 
 

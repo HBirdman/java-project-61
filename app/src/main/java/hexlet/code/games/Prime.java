@@ -15,7 +15,7 @@ public class Prime {
             column++;
             numbersAndAnswers[column][i] = isSimple(number);
         }
-        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1]);
+        Engine.logic(task, numbersAndAnswers);
     }
 
 
