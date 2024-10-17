@@ -3,10 +3,10 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int NumberOfRounds = 3;
+    private static final int NUMBER_OF_ROUNDS = 3;
 
     public static int getNumberOfRounds() {
-        return NumberOfRounds;
+        return NUMBER_OF_ROUNDS;
     }
 
     public static void logic(String task, String[] question, String[] correctAnswer) {
@@ -15,7 +15,7 @@ public class Engine {
         String name = sc.nextLine();
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
-        for (var i = 0; i < NumberOfRounds; i++) {
+        for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
             System.out.print("Question: " + question[i] + "\nYour answer: ");
             String answer = sc.nextLine();
             answerChecker(correctAnswer[i], answer, name);
