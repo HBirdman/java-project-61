@@ -6,8 +6,8 @@ import hexlet.code.Util;
 public class Progression {
     public static void game() {
         String task = "What number is missing in the progression?";
-        String[][] progressionsAndAnswers = new String[2][Engine.numberOfRounds];
-        for (var i = 0; i < Engine.numberOfRounds; i++) {
+        String[][] progressionsAndAnswers = new String[2][Engine.getNumberOfRounds()];
+        for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int column = 0;
             String[] progressionAndAnswer = generateProgression();
             progressionsAndAnswers[column][i] = progressionAndAnswer[column];
