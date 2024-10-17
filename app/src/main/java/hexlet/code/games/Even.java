@@ -7,13 +7,11 @@ public class Even {
     public static void game() {
         String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         final int evenRange = 100;
-        String[][] numbersAndAnswers = new String[2][Engine.getNumberOfRounds()];
+        String[][] numbersAndAnswers = new String[Engine.getNumberOfRounds()][2];
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int column = 0;
             int number = Util.randomNumber(evenRange);
-            numbersAndAnswers[column][i] = String.valueOf(number);
-            column++;
-            numbersAndAnswers[column][i] = getCorrectAnswer(number);
+            numbersAndAnswers[i][0] = String.valueOf(number);
+            numbersAndAnswers[i][1] = getCorrectAnswer(number);
         }
         Engine.logic(task, numbersAndAnswers);
     }

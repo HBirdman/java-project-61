@@ -6,13 +6,11 @@ import hexlet.code.Util;
 public class Progression {
     public static void game() {
         String task = "What number is missing in the progression?";
-        String[][] progressionsAndAnswers = new String[2][Engine.getNumberOfRounds()];
+        String[][] progressionsAndAnswers = new String[Engine.getNumberOfRounds()][2];
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int column = 0;
             String[] progressionAndAnswer = generateProgression();
-            progressionsAndAnswers[column][i] = progressionAndAnswer[column];
-            column++;
-            progressionsAndAnswers[column][i] = progressionAndAnswer[column];
+            progressionsAndAnswers[i][0] = progressionAndAnswer[0];
+            progressionsAndAnswers[i][1] = progressionAndAnswer[1];
         }
         Engine.logic(task, progressionsAndAnswers);
     }

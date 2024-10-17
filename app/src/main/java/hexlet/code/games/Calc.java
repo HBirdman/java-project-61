@@ -8,14 +8,12 @@ import java.util.Random;
 public class Calc {
     public static void game() {
         String task = "What is the result of the expression?";
-        String[][] expressionsAndAnswers = new String[2][Engine.getNumberOfRounds()];
+        String[][] expressionsAndAnswers = new String[Engine.getNumberOfRounds()][2];
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int column = 0;
             String operator = generateOperator();
             String[] expressionAndAnswer = construct(operator);
-            expressionsAndAnswers[column][i] = expressionAndAnswer[column];
-            column++;
-            expressionsAndAnswers[column][i] = expressionAndAnswer[column];
+            expressionsAndAnswers[i][0] = expressionAndAnswer[0];
+            expressionsAndAnswers[i][1] = expressionAndAnswer[1];
         }
         Engine.logic(task, expressionsAndAnswers);
     }

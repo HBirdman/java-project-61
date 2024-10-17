@@ -16,9 +16,9 @@ public class Engine {
         System.out.println("Hello, " + name + "!");
         System.out.println(task);
         for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            System.out.print("Question: " + questionAndAnswer[0][i] + "\nYour answer: ");
+            System.out.print("Question: " + questionAndAnswer[i][0] + "\nYour answer: ");
             String answer = sc.nextLine();
-            answerChecker(questionAndAnswer[1][i], answer, name);
+            answerChecker(questionAndAnswer[i][1], answer, name);
         }
         System.out.println("Congratulations, " + name + "!");
     }

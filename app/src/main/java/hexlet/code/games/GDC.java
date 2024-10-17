@@ -6,16 +6,14 @@ import hexlet.code.Util;
 public class GDC {
     public static void game() {
         String task = "Find the greatest common divisor of given numbers.";
-        String[][] numbersAndAnswers = new String[2][Engine.getNumberOfRounds()];
+        String[][] numbersAndAnswers = new String[Engine.getNumberOfRounds()][2];
         final int numberRange = 100;
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int column = 0;
             int a = Util.randomNumber(numberRange);
             int b = Util.randomNumber(numberRange);
             int answer = findGDC2(a, b);
-            numbersAndAnswers[column][i] = a + " " + b;
-            column++;
-            numbersAndAnswers[column][i] = String.valueOf(answer);
+            numbersAndAnswers[i][0] = a + " " + b;
+            numbersAndAnswers[i][1] = String.valueOf(answer);
         }
         Engine.logic(task, numbersAndAnswers);
     }

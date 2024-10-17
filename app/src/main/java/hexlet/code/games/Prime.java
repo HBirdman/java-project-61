@@ -7,13 +7,11 @@ public class Prime {
     public static void game() {
         String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         final int numberRange = 20;
-        String[][] numbersAndAnswers = new String[2][Engine.getNumberOfRounds()];
+        String[][] numbersAndAnswers = new String[Engine.getNumberOfRounds()][2];
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int column = 0;
             int number = Util.randomNumber(numberRange);
-            numbersAndAnswers[column][i] = String.valueOf(number);
-            column++;
-            numbersAndAnswers[column][i] = isSimple(number);
+            numbersAndAnswers[i][0] = String.valueOf(number);
+            numbersAndAnswers[i][1] = isSimple(number);
         }
         Engine.logic(task, numbersAndAnswers);
     }
