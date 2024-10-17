@@ -3,8 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void logic(String task, String[] question, String[] correctAnswer, int numberOfRounds) {
-
+    public static int numberOfRounds = 3;
+    public static void logic(String task, String[] question, String[] correctAnswer) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
         String name = sc.nextLine();

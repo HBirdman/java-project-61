@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        final int numberOfRounds = 3;
         Scanner sc = new Scanner(System.in);
         System.out.println("""
                 Please enter the game number and press Enter.
@@ -27,19 +26,19 @@ public class App {
                 Cli.game();
                 break;
             case "2":
-                Even.game(numberOfRounds);
+                Even.game();
                 break;
             case "3":
-                Calc.game(numberOfRounds);
+                Calc.game();
                 break;
             case "4":
-                GDC.game(numberOfRounds);
+                GDC.game();
                 break;
             case "5":
-                Progression.game(numberOfRounds);
+                Progression.game();
                 break;
             case "6":
-                Prime.game(numberOfRounds);
+                Prime.game();
                 break;
             default:
                 break;

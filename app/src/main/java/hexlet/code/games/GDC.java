@@ -4,11 +4,11 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class GDC {
-    public static void game(int numberOfRounds) {
+    public static void game() {
         String task = "Find the greatest common divisor of given numbers.";
-        String[][] numbersAndAnswers = new String[2][numberOfRounds];
+        String[][] numbersAndAnswers = new String[2][Engine.numberOfRounds];
         final int numberRange = 100;
-        for (var i = 0; i < numberOfRounds; i++) {
+        for (var i = 0; i < Engine.numberOfRounds; i++) {
             int column = 0;
             int a = Util.randomNumber(numberRange);
             int b = Util.randomNumber(numberRange);
@@ -17,7 +17,7 @@ public class GDC {
             column++;
             numbersAndAnswers[column][i] = String.valueOf(answer);
         }
-        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
+        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1]);
     }
 
 

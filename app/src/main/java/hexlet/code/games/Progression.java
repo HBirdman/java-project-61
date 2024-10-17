@@ -4,17 +4,17 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Progression {
-    public static void game(int numberOfRounds) {
+    public static void game() {
         String task = "What number is missing in the progression?";
-        String[][] progressionsAndAnswers = new String[2][numberOfRounds];
-        for (var i = 0; i < numberOfRounds; i++) {
+        String[][] progressionsAndAnswers = new String[2][Engine.numberOfRounds];
+        for (var i = 0; i < Engine.numberOfRounds; i++) {
             int column = 0;
             String[] progressionAndAnswer = generateProgression();
             progressionsAndAnswers[column][i] = progressionAndAnswer[column];
             column++;
             progressionsAndAnswers[column][i] = progressionAndAnswer[column];
         }
-        Engine.logic(task, progressionsAndAnswers[0], progressionsAndAnswers[1], numberOfRounds);
+        Engine.logic(task, progressionsAndAnswers[0], progressionsAndAnswers[1]);
     }
 
     public static String[] generateProgression() {

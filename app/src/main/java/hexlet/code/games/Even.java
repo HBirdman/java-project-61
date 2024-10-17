@@ -4,18 +4,18 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
-    public static void game(int numberOfRounds) {
+    public static void game() {
         String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         final int evenRange = 100;
-        String[][] numbersAndAnswers = new String[2][numberOfRounds];
-        for (var i = 0; i < numberOfRounds; i++) {
+        String[][] numbersAndAnswers = new String[2][Engine.numberOfRounds];
+        for (var i = 0; i < Engine.numberOfRounds; i++) {
             int column = 0;
             int number = Util.randomNumber(evenRange);
             numbersAndAnswers[column][i] = String.valueOf(number);
             column++;
             numbersAndAnswers[column][i] = getCorrectAnswer(number);
         }
-        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1], numberOfRounds);
+        Engine.logic(task, numbersAndAnswers[0], numbersAndAnswers[1]);
     }
 
     public static String getCorrectAnswer(int randomNumber) {

@@ -6,10 +6,10 @@ import hexlet.code.Util;
 import java.util.Random;
 
 public class Calc {
-    public static void game(int numberOfRounds) {
+    public static void game() {
         String task = "What is the result of the expression?";
-        String[][] expressionsAndAnswers = new String[2][numberOfRounds];
-        for (var i = 0; i < numberOfRounds; i++) {
+        String[][] expressionsAndAnswers = new String[2][Engine.numberOfRounds];
+        for (var i = 0; i < Engine.numberOfRounds; i++) {
             int column = 0;
             String operator = generateOperator();
             String[] expressionAndAnswer = construct(operator);
@@ -17,7 +17,7 @@ public class Calc {
             column++;
             expressionsAndAnswers[column][i] = expressionAndAnswer[column];
         }
-        Engine.logic(task, expressionsAndAnswers[0], expressionsAndAnswers[1], numberOfRounds);
+        Engine.logic(task, expressionsAndAnswers[0], expressionsAndAnswers[1]);
     }
 
     public static String generateOperator() {
