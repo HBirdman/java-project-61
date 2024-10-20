@@ -4,8 +4,9 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
+    private static final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
     public static void game() {
-        String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         final int evenRange = 100;
         String[][] numbersAndAnswers = new String[Engine.getNumberOfRounds()][2];
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {

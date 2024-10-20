@@ -4,8 +4,9 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Progression {
+    private static final String task = "What number is missing in the progression?";
+
     public static void game() {
-        String task = "What number is missing in the progression?";
         String[][] progressionsAndAnswers = new String[Engine.getNumberOfRounds()][2];
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             String[] progressionAndAnswer = generateProgression();
