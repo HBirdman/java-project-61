@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Prime {
-    private static final String task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final String TASK = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void game() {
         final int numberRange = 20;
@@ -14,7 +14,7 @@ public class Prime {
             numbersAndAnswers[i][0] = String.valueOf(number);
             numbersAndAnswers[i][1] = isSimple(number);
         }
-        Engine.logic(task, numbersAndAnswers);
+        Engine.logic(TASK, numbersAndAnswers);
     }
 
 

@@ -6,7 +6,7 @@ import hexlet.code.Util;
 import java.util.Random;
 
 public class Calc {
-    private static final String task = "What is the result of the expression?";
+    private static final String TASK = "What is the result of the expression?";
 
     public static void game() {
         String[][] expressionsAndAnswers = new String[Engine.getNumberOfRounds()][2];
@@ -16,7 +16,7 @@ public class Calc {
             expressionsAndAnswers[i][0] = expressionAndAnswer[0];
             expressionsAndAnswers[i][1] = expressionAndAnswer[1];
         }
-        Engine.logic(task, expressionsAndAnswers);
+        Engine.logic(TASK, expressionsAndAnswers);
     }
 
     public static String generateOperator() {

@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Util;
 
 public class Even {
-    private static final String task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String TASK = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void game() {
         final int evenRange = 100;
@@ -14,7 +14,7 @@ public class Even {
             numbersAndAnswers[i][0] = String.valueOf(number);
             numbersAndAnswers[i][1] = getCorrectAnswer(number);
         }
-        Engine.logic(task, numbersAndAnswers);
+        Engine.logic(TASK, numbersAndAnswers);
     }
 
     public static String getCorrectAnswer(int randomNumber) {
